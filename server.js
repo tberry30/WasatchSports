@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var moment = require('moment');
 var jwt = require('jsonwebtoken');
 var config = require('./server/config/config');

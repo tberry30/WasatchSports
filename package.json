@@ -4,7 +4,7 @@
   "description": "wasatchSportsRes",
   "main": "server.js",
   "dependencies": {
-    "bcrypt": "^0.8.7",
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "jsonwebtoken": "^5.5.4",
