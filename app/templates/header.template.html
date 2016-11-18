@@ -1,0 +1,52 @@
+<header>
+  <div class="header-container">
+    <div class="logo">
+			<a href="/"><img src="/assets/images/WS Logo4.png" alt=""></a>
+		</div>
+
+    <div class="user-menu right">
+      <span ng-show="appCtrl.currentUser">Hi, {{ appCtrl.currentUser.firstName }}</span>
+
+      <button ng-hide="appCtrl.currentUser" ng-click="appCtrl.login()">SIGN IN</button>
+      <button ng-show="appCtrl.currentUser" ng-click="appCtrl.logout()">LOG OUT</button>
+    </div>
+
+    <nav>
+      <ul ng-if="!appCtrl.currentUser.role">
+        <li><a ui-sref="main">Home</a></li>
+        <li><a ui-sref="rentals">Rentals</a></li>
+        <li><a ui-sref="tickets">Lift Tickets</a></li>
+        <li><a ui-sref="location">Locations</a></li>
+        <li><a ui-sref="create-account">Create Account</a></li>
+      </ul>
+
+      <ul ng-if="appCtrl.currentUser.role === 'customer'">
+        <li><a ui-sref="main">Home</a></li>
+        <li><a ui-sref="rentals">Rentals</a></li>
+        <li><a ui-sref="tickets">Lift Tickets</a></li>
+        <li><a ui-sref="location">Locations</a></li>
+        <li><a ui-sref="account">My Account</a></li>
+      </ul>
+
+      <ul ng-if="appCtrl.currentUser.role === 'tech' || appCtrl.currentUser.role === 'admin'">
+        <li><a><i class="fa fa-bars"></i></a>
+          <ul>
+            <li><a ui-sref="main">Home</a></li>
+            <li><a ui-sref="rentals">Rentals</a></li>
+            <li><a ui-sref="tickets">Lift Tickets</a></li>
+            <li><a ui-sref="location">Locations</a></li>
+          </ul>
+        </li>
+        <li><a ui-sref="view-equipment">Equipment</a></li>
+        <li><a ui-sref="create-equipment">Create</a></li>
+        <li><a ui-sref="dashboard">Reservation Dashboard</a></li>
+        <li><a ui-sref="queue">Reservation Queue</a></li>
+        <li><a ui-sref="account">My Account</a></li>
+        <li ng-if="appCtrl.currentUser.role === 'admin'">
+          <a ui-sref="admin">Admin</a>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+</header>

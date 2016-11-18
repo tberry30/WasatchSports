@@ -1,0 +1,60 @@
+<div>
+  <h3><pre>{{ accountCtrl.text }}</pre></h3>
+
+  <div>
+    <button class="right reserve" ui-sref="create-reservation">New Reservation</button>
+    <button class="clearFix right reserve" ng-click="appCtrl.updatePassword()">Change Password</button>
+
+    {{ appCtrl.currentUser.role | uppercase }}<br><br>
+    Name: {{ appCtrl.currentUser.firstName }} {{ appCtrl.currentUser.lastName }}<br>
+    Username: {{ appCtrl.currentUser.username }}<br>
+
+    <br><br>
+
+    <div class="leftContent">
+      <h3>Current Reservations</h3>
+      <div ng-repeat="reservation in accountCtrl.currentReservations | orderBy:dateOut:true">
+        <div class="resListing" ui-sref="view-reservation({id: reservation._id})">
+          <span style="float: right;">{{ reservation.renters.length }} Renters</span>
+          <span style="font-weight: 300; color: #337ab7;">
+          {{ reservation.dateOut | amDateFormat: 'M/D/YYYY' }} - {{ reservation.dateIn | amDateFormat: 'M/D/YYYY' }}
+        </span>
+          <br><br>
+          <span style="font-size: 12px;">{{ reservation._id }} | {{ reservation.status | uppercase }}</span><br>
+        </div>
+      </div>
+    </div>
+
+    <div class="rightContent">
+      <h3>Past Reservations</h3>
+      <div ng-repeat="reservation in accountCtrl.pastReservations | orderBy:dateOut:true">
+        <div class="resListing" ui-sref="view-reservation({id: reservation._id})">
+          <span style="float: right;">{{ reservation.renters.length }} Renters</span>
+          <span style="font-weight: 300; color: #337ab7;">
+          {{ reservation.dateOut | amDateFormat: 'M/D/YYYY' }} - {{ reservation.dateIn | amDateFormat: 'M/D/YYYY' }}
+        </span>
+          <br><br>
+          <span style="font-size: 12px;">{{ reservation._id }} | {{ reservation.status | uppercase }}</span><br>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- <br><br>
+    <h3>Past Reservations</h3><br><br>
+    <div ng-repeat="reservation in accountCtrl.pastReservations | orderBy:dateOut:true">
+      <a ui-sref="view-reservation({id: reservation._id})">
+        ID: {{ reservation._id }}
+      </a>
+      ( {{ reservation.dateOut | amDateFormat: 'M/D/YYYY' }} - {{ reservation.dateIn | amDateFormat: 'M/D/YYYY' }} )
+
+      <button ui-sref="view-reservation({id: reservation._id})">VIEW</button>
+    </div> -->
+  </div>
+
+
+</div>

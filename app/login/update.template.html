@@ -1,0 +1,17 @@
+<div class="login-modal" ng-if="visible_updatePass">
+  <div class="login-modal-container">
+
+    <i ng-click="updateCtrl.closeLogin()" class="fa fa-times"></i>
+
+    <form name="loginForm" ng-submit="updateCtrl.updatePassword(credentials)" novalidate>
+      <label for="oldPassword">Old Password:</label>
+      <input type="password" id="oldPassword" ng-model="credentials.oldPassword" autofocus>
+
+      <label for="newPassword">New Password:</label>
+      <input type="password" id="newPassword" ng-model="credentials.newPassword">
+
+      <button type="submit">Update</button>
+    </form>
+
+  </div>
+</div>

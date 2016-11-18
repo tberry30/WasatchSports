@@ -1,0 +1,79 @@
+<div>
+<h3><pre>{{ equipmentCtrl.text }}</pre></h3>
+
+<div class="searchEquip right">
+  <span class="fa fa-filter"></span>
+  <input ng-model="equipFilter.$" placeholder="Search rentals ...">
+  <span ng-click="equipFilter = ''" class="fa fa-times-circle"></span>
+</div>
+
+<div class="select-style drop right">
+  <select ng-model="equipFilter.type">
+    <option value="" disabled>Filter by type</option>
+    <option value="">All</option>
+    <option ng-repeat="(key, value) in equipmentCtrl.types" value="{{key}}">{{key}}</option>
+  </select>
+</div>
+
+
+<div class="table">
+    <div class="row equipHeaders">
+        <div ng-click="equipmentCtrl.order('ws_id')" class="cell"><h3>ID</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'ws_id'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('type')" class="cell"><h3>Type</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'type'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('package')" class="cell"><h3>Package</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'package'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('season')" class="cell"><h3>Season</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'season'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('brand')" class="cell"><h3>Brand</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'brand'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('model')" class="cell"><h3>Model</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'model'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('size')" class="cell"><h3>Size</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'size'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('timesRented')" class="cell"><h3>Rentals</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'timesRented'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+        <div ng-click="equipmentCtrl.order('timesRepaired')" class="cell"><h3>Repairs</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'timesRepaired'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+
+        <div ng-click="equipmentCtrl.order('checkedOut')" class="cell"><h3>Available</h3>
+          <span class="direction" ng-show="equipmentCtrl.focus === 'checkedOut'" ng-class="{reverse:equipmentCtrl.reverse}"></span>
+        </div>
+
+        <div class="cell" style="text-align: right;"><h3>Details</h3></div>
+    </div>
+
+
+    <div class="row equipResults" ng-repeat="rental in equipmentCtrl.equipment | filter:equipFilter | orderBy:equipmentCtrl.focus:equipmentCtrl.reverse">
+        <div class="cell">{{rental.ws_id}}</div>
+        <div class="cell">{{rental.type}}</div>
+        <div class="cell">{{rental.package}}</div>
+        <div class="cell">{{rental.season}}</div>
+        <div class="cell">{{rental.brand}}</div>
+        <div class="cell">{{rental.model}}</div>
+        <div class="cell">{{rental.size}}</div>
+        <div class="cell">{{rental.timesRented}}</div>
+        <div class="cell">{{rental.timesRepaired}}</div>
+
+        <div class="cell">
+          <i ng-show="!rental.checkedOut" class="fa fa-check"></i>
+          <i ng-show="rental.checkedOut" class="fa fa-times"></i>
+        </div>
+
+        <div class="cell" style="text-align: right;">
+          <a ui-sref="edit-equipment({id: rental._id})"><i class="fa fa-info-circle"></i></a>
+        </div>
+    </div>
+</div>
+
+</div>

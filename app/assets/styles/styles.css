@@ -1,0 +1,763 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+body {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	/*background-color: #e3e3e3;*/
+}
+.container {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -70px; /* the bottom margin is the negative value of the footer's height */
+}
+header {
+	position: relative;
+	height: 110px;
+	border-bottom: 1px solid #999999;
+	color: #CCCCCC;
+	background-color: rgba(50, 50, 50, 0.2);
+}
+header::after {
+  content: "";
+  background: url("../images/wood.jpg");
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.logo {
+	float: left;
+	position: absolute;
+}
+.logo img {
+	width: 80%;
+	height: 80%;
+}
+.header-container {
+	padding-top: 10px;
+	width: 900px;
+	margin: 0 auto;
+}
+
+.user-menu {
+	color: white;
+}
+.user-menu button {
+	margin-left: 15px;
+}
+
+
+/*** NAVIGATION ****************************/
+nav {
+	position: absolute;
+	bottom: 0;
+	background-color: #337ab7;
+	height: 30px;
+	line-height: 30px;
+	width: 900px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+}
+nav ul li {
+	display: inline-block;
+	list-style: none;
+	position: relative;
+}
+nav ul li a {
+	height: 32px;
+	color: #FFF;
+	display: inline-block;
+	padding: 0 15px 0 15px;
+	text-decoration: none;
+}
+nav ul li a:hover {
+	border-bottom: 3px solid #337ab7;
+	color: #FFF;
+}
+
+nav ul li ul {
+	position: absolute;
+	display: none;
+	z-index: 200;
+	background-color: rgba(68, 68, 68, 0.98);
+	width: 150px;
+	padding: 5px 5px 5px 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	top: 31px;
+}
+nav ul li ul li a {
+	color: white;
+}
+nav ul li:hover ul {
+	display: block;
+}
+nav ul li ul li:hover a {
+	color: #337ab7;
+	border-bottom: none;
+}
+
+
+
+
+
+/*** END NAVIGATION ****************************/
+
+
+button {
+	height: 30px;
+	border: 1px solid #428bca;
+	border-radius: 5px;
+	background-color: #428bca;
+	color: #FFFFFF;
+	padding: 0px 15px;
+	margin: 5px 0px;
+	font-size: 12px;
+}
+button:hover {
+	background-color: #337ab7;
+	cursor: pointer;
+}
+button.check-in {
+	background-color: #74aa72;
+	border: 1px solid #74aa72;
+}
+button.remove {
+	background-color: #b05b5b;
+	border: 1px solid #b05b5b;
+}
+
+button.reserve {
+	width: 200px;
+}
+
+
+
+
+.toast-top-right {
+  top: 122px;
+}
+
+.main-content {
+	position: relative;
+	margin: 0 auto;
+	width: 900px;
+	margin-top: 10px;
+	overflow: auto;
+	padding-bottom: 20px;
+}
+form {
+	width: 400px;
+	margin: 0 auto;
+}
+label {
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+input {
+	line-height: 20px;
+	font-size: 0.8em;
+	padding: 6px 12px;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	width: 400px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	/*box-shadow: inset 0 1px 1px rgba(0,0,0,.075);*/
+}
+
+.login-modal {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.login-modal-container {
+	padding-top: 25px;
+	z-index: 100;
+	position: absolute;
+	width: 50%;
+	height: 180px;
+	overflow: auto;
+	background-color: #FFFFFF;
+	box-shadow: 4px 4px 80px #000;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+.login-modal-container .fa-times {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: #888888;
+	font-size: 1.5em;
+
+}
+.login-modal-container .fa-times:hover {
+	color: #111111;
+}
+
+
+.modal-content {
+	text-align: center;
+	opacity: 1;
+}
+
+footer, .push {
+	height: 70px; /* .push must be the same height as .footer */
+}
+
+footer {
+  /*background-color: rgba(100, 100, 100, 0.75);*/
+	border-top: 1px solid #999999;
+	background-color: #444444;
+	color: #CCCCCC;
+}
+
+footer p {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.outer {
+	position: relative;
+	width: 100%;
+}
+.two-by {
+	position: relative;
+	width: 50%;
+	line-height: 1.2;
+}
+.one-third {
+	position: relative;
+	width: 34%;
+}
+.two-third {
+	position: relative;
+	width: 66%;
+}
+
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.center {
+  margin: 0 auto;
+}
+.clearFix {
+	clear: both;
+}
+
+.renter {
+	/*width: 390px;*/
+	margin-top: 10px;
+	margin-bottom: 10px;
+	min-height: 50px;
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 14px;
+	overflow: auto;
+}
+
+
+.edit-renter-equip {
+	border: 1px solid #BBBBBB;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 29px;
+}
+
+
+/* Dashboard Reservations */
+.dashRes {
+	width: 100%;
+	padding: 10px 0;
+}
+
+.search {
+	line-height: 15px;
+	width: 200px;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Thin.ttf);
+		font-weight: 100;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-ExtraLight.ttf);
+		font-weight: 200;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Light.ttf);
+		font-weight: 300;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Regular.ttf);
+		font-weight: 400;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Medium.ttf);
+		font-weight: 500;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-SemiBold.ttf);
+		font-weight: 600;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Bold.ttf);
+		font-weight: 700;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-ExtraBold.ttf);
+		font-weight: 800;
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Black.ttf);
+		font-weight: 900;
+}
+
+
+
+
+.select-style {
+	position: relative;
+    padding: 0;
+		margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    width: 424px;
+		line-height: 35px;
+		border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+		background-color: rgba(255, 255, 255, 0);
+    /*background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;*/
+}
+
+.drop {
+	margin: 5px 20px 0 0;
+	width: 300px;
+	line-height: 32px;
+}
+
+
+
+
+.select-style:before {
+    content: "\f107";
+    font-family: FontAwesome;
+    color: #AAA;
+    font-size: 25px;
+    position: absolute;
+    right: 20px;
+		z-index: -1;
+}
+.select-style select {
+		font-size: 14px;
+		color: #AAAAAA;
+    padding: 5px 12px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+.select-style select:focus {
+    outline: none;
+}
+
+
+h3 {
+	font-weight: 500;
+	color: #756d65;
+	display: inline;
+}
+h4 {
+	font-weight: 600;
+	color: #337ab7;
+}
+
+.shadow {
+	-webkit-box-shadow: 0 30px 30px -20px #777777;
+	   -moz-box-shadow: 0 30px 30px -20px #777777;
+	        box-shadow: 0 30px 30px -20px #777777;
+}
+
+.red {
+	color: #9f5858;
+	font-weight: 600;
+}
+
+.renterNum {
+	width: 80px;
+	height: 80px;
+	border-radius: 5px;
+	font-size: 70px;
+	color: white;
+	background-color: #337ab7;
+	text-align: center;
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+
+.fa-pencil {
+	font-size: 16px;
+	color: #428bca;
+}
+.fa-pencil:hover {
+	color: #337ab7;
+}
+
+
+button.cancel {
+	background-color: #b05b5b;
+	border: 1px solid #b05b5b;
+	margin-right: 10px;
+}
+button.cancel:hover {
+	background-color: #934b4b;
+}
+button.complete {
+	background-color: #74aa72;
+	border: 1px solid #74aa72;
+}
+button.complete:hover {
+	background-color: #5e885c;
+}
+
+button.check-in {
+	background-color: #74aa72;
+	border: 1px solid #74aa72;
+}
+button.check-in:hover {
+	background-color: #5e885c;
+}
+
+button.remove {
+	background-color: #b05b5b;
+	border: 1px solid #b05b5b;
+}
+button.remove:hover {
+	background-color: #934b4b;
+}
+
+
+
+
+/*** Equipment ****************************/
+.searchEquip {
+  position: relative;
+}
+.searchEquip input {
+	text-indent: 20px;
+	margin-bottom: 15px;
+	width: 300px;
+}
+.searchEquip .fa-filter {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+	color: #999999;
+}
+.searchEquip .fa-times-circle {
+  position: absolute;
+  top: 13px;
+  left: 295px;
+	font-size: 20px;
+	color: #999999;
+}
+.searchEquip .fa-times-circle:hover {
+	color: #555555;
+}
+
+
+
+.table {
+	display: table;
+	width: 100%;
+}
+.table .equipResults {
+	font-size: 12px;
+}
+
+.row {
+	display: table-row;
+	width: 100%;
+}
+
+.row:nth-child(even) {background-color: rgba(87, 75, 62, 0.2);}
+.row:nth-child(odd) {background-color: #FFF;}
+
+.cell {
+	display: table-cell;
+	padding: 10px;
+}
+
+.fa-info-circle {
+	color: #555555;
+	font-size: 22px;
+}
+.fa-info-circle:hover {
+	color: #337ab7;
+}
+
+.direction:after {
+	font-family: FontAwesome;
+	content: "\f077";
+	color: rgba(87, 75, 62, 0.9);
+	font-size: 16px;
+}
+.direction.reverse:after {
+	font-family: FontAwesome;
+	content: "\f078";
+	color: rgba(87, 75, 62, 0.9);
+	font-size: 16px;
+}
+
+.equipHeaders > div {
+	cursor: pointer;
+}
+
+
+/*** ACCOUNT / RESERVATIONS ****************************/
+
+.resListing {
+	border: 1px solid #DDDDDD;
+	border-radius: 9px;
+	padding: 9px;
+	margin: 10px 0;
+}
+
+.resListing:hover {
+	background-color: #F6F6F6;
+	border: 1px solid rgba(51, 123, 184, 0.5);
+}
+
+
+
+
+
+
+
+
+/*** REPAIRS ****************************/
+.repairs textarea {
+	width: 92%;
+	font-size: 16px;
+	padding-left: 9px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 12, 119, 0.3);
+}
+
+.repairList {
+	width: 95%;
+	border-color: #DDDDDD;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+.repairHeading {
+height: 20px;	background-color: rgba(87, 75, 62, 0.2);
+	padding: 5px;
+}
+.repairType {
+	float: left;
+}
+.repairDate {
+	float: right;
+}
+.repairNotes {
+	clear: both;
+	padding: 5px;
+	font-size: 14px;
+	line-height: 16px;
+}
+.repairNotes span {
+	color: #999999;
+}
+
+/*** RENTALS ****************************/
+.topRight {
+	position: absolute;
+	right: 45px;
+	top: 3px;
+}
+
+.fa-check-circle-o.large, .fa-times-circle-o.large {
+	font-size: 80px;
+	float: right;
+	padding-right: 20px;
+}
+
+.fa-check, .fa-times {
+	font-size: 22px;
+}
+
+
+.fa-check-circle-o {
+	color: #23a151;
+}
+.fa-times-circle-o {
+	color: #b55a5a;
+}
+
+.fa-check {
+	color: #23a151;
+}
+.fa-times {
+	color: #b55a5a;
+}
+
+
+/*** MISC ****************************/
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+
+
+.leftContent {
+	position: relative;
+	width: 48%;
+	float: left;
+}
+.rightContent {
+	position: relative;
+	width: 48%;
+	float: right;
+}
+/*.center {
+	text-align: center;
+}*/
+
+/*.padLeft {
+	padding-left: 5%;
+}
+.padRight {
+	padding-right: 5%;
+}*/
+/*.padLeftRight {
+	padding-left: 5%;
+	padding-right: 5%;
+}*/
+
+
+.main-rentals {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.rental-container {
+	position: relative;
+	text-align: center;
+	width: 30%;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.main-rentals img {
+  max-height: 250px;
+	float: left;
+	margin: 15px 20px;
+}
+.rental-description {
+	text-align: left;
+	margin: 15px;
+	line-height: 1.3;
+}
+.rental-container button {
+	position: absolute;
+	bottom: 15px;
+	right: 20px;
+}
+
+.ticket-container {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding: 10px 0;
+}
+.ticket-container img {
+	height: 60px;
+}
+.ticket-container div {
+	margin: auto;
+	text-align: center;
+}
+.ticket-container div {
+	width: 33%;
+}
+.ticket-container div:nth-of-type(3) {
+	font-weight: 600;
+	color: #337ab7;
+}
+.ticket-container:nth-child(even) {
+	background-color: #F6F6F6;
+}
+.ticket-container:first-of-type {
+	height: 40px;
+	background-color: #AAAAAA;
+	border-bottom: 2px solid #555555;
+}
+.ticket-container h4 {
+	color: #F5F5F5;
+}
+
+.location-container div {
+	text-align: center;
+}
+.location-data-row {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	line-height: 1.5;
+	margin: 25px 0;
+}
+.location-data-row:nth-of-type(1) {
+	text-align: right;
+}
+.location-data-row div:nth-of-type(2) {
+	text-align: left;
+	margin-left: 15px;
+}
+
+.location-container img {
+	width: 898px;
+	border: 1px solid #BBBBBB;
+}

@@ -1,0 +1,25 @@
+<div>
+  <h3><pre>{{ editUserCtrl.text }}</pre></h3>
+
+  <br><br>
+
+  First Name: <input ng-model="editUserCtrl.userToEdit.firstName" placeholder="First Name"><br>
+  Last Name: <input ng-model="editUserCtrl.userToEdit.lastName" placeholder="Last Name"><br>
+  Username: <input ng-model="editUserCtrl.userToEdit.username" placeholder="Username"><br>
+  Email: <input ng-model="editUserCtrl.userToEdit.email" placeholder="Email"><br>
+
+  <br>
+  Role:
+  <div class="select-style">
+    <select ng-model="editUserCtrl.userToEdit.role">
+      <option value="" disabled>Choose a role</option>
+      <option value="customer">customer</option>
+      <option value="tech">tech</option>
+      <option value="admin">admin</option>
+    </select>
+  </div>
+
+  <button ng-click="editUserCtrl.update(editUserCtrl.userToEdit)">Update</button>
+  <button ng-click="editUserCtrl.remove(editUserCtrl.userToEdit._id)">Delete</button>
+
+</div>
