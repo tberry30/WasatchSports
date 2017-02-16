@@ -110,8 +110,6 @@ nav ul li ul li:hover a {
 
 
 /*** END NAVIGATION ****************************/
-
-
 button {
 	height: 30px;
 	border: 1px solid #428bca;
@@ -186,10 +184,11 @@ input {
 }
 .login-modal-container {
 	padding-top: 25px;
+	padding-bottom: 25px;
 	z-index: 100;
 	position: absolute;
 	width: 50%;
-	height: 180px;
+	/*height: 180px;*/
 	overflow: auto;
 	background-color: #FFFFFF;
 	box-shadow: 4px 4px 80px #000;
@@ -366,7 +365,6 @@ footer p {
 	width: 300px;
 	line-height: 32px;
 }
-
 
 
 
